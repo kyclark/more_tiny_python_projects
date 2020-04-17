@@ -43,10 +43,12 @@ def test_bad_wordlist():
     assert rv != 0
     assert re.search(f"No such file or directory: '{bad}'", out)
 
+
 # --------------------------------------------------
 def test_pulp_fiction():
     """Test Pulp Fiction"""
 
     rv, out = getstatusoutput(f'{prg} "Pulp Fiction"')
     assert rv == 0
-    assert out.rstrip() == '\n'.join(['Pulp Fiction', 'Poulp Fiction', 'Pulp Friction', 'Pulpy Fiction'])
+    assert out.rstrip() == '\n'.join(
+        ['Pulp Fiction', 'Poulp Fiction', 'Pulp Friction', 'Pulpy Fiction'])
