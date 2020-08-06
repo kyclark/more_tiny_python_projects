@@ -50,5 +50,7 @@ def test_pulp_fiction():
 
     rv, out = getstatusoutput(f'{prg} "Pulp Fiction"')
     assert rv == 0
-    assert out.rstrip() == '\n'.join(
-        ['Pulp Fiction', 'Poulp Fiction', 'Pulp Friction', 'Pulpy Fiction'])
+    assert out.rstrip() == '\n'.join([
+        'pulp fiction', 'poulp fiction', 'pul fiction', 'pulp friction',
+        'pulpy fiction', 'pup fiction'
+    ])

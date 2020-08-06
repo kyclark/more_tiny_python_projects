@@ -1,4 +1,4 @@
 .PHONY: test
 
 test:
-	pytest -xv ruinator.py test.py
+	pytest -xv unit.py test.py
