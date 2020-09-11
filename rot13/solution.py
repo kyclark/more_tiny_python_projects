@@ -71,7 +71,13 @@ def main():
     text = re.sub('[^A-Z]', '', args.text.upper())
     letters = string.ascii_uppercase
     shift = args.shift or int(len(letters) / 2)
-    encrypted = [rot(char, letters, shift) for char in text]
+
+    # encrypted = [rot(char, letters, shift) for char in text]
+
+    # Peter Norvig's solution http://norvig.com/ngrams/
+    encrypted = text.translate(
+        str.maketrans(letters, letters[shift:] + letters[:shift]))
+
     padded = pad_out(encrypted, args.pad)
     print('\n'.join(wrap(padded, width=args.width)))
 
